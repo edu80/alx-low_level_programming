@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
 * main -Entry point
-* Rturn: Always 0 (success)
+* Return: Always 0 (success)
 * betty style doc for function main goes there
 */
 int main(void)
