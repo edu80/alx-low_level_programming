@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
 * print_array - prints n elements of an array of 
 * plus a new line.
@@ -9,7 +8,6 @@
 * Return: no return.
 * betty style doc for function main goes there
 */
-
 void print_array(int *a, int n)
 {
 int i = 0;
