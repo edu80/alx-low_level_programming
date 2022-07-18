@@ -6,15 +6,14 @@
 * @n: number of bytes
 * Return:(s)
 */
-
 char *_memset(char *s, char b, unsigned int n)
 {
-char *p = s;
-while (n > 0)
+unsigned int i;
+int i=0;
+while (i<n)
 {
-*p = b;
-p++;
-n--;
+s[i]=b;
+i++;
 }
-return (s);
+return(s);
 }
