@@ -1,17 +1,20 @@
-#include "main.h"
+#include "holberton.h"
 /**
-*_memset - fill memory with a constant byte
-*@s: memory area to fill
-*@b: constant byte to fill
-*@@n: bytes of memory area to fill
-*return: the memory area to filled
+* _memset - fills memory with constant byte.
+* @s: array of char
+* @b: array of chat
+* @n: number of bytes
+* Return:(s)
 */
+
 char *_memset(char *s, char b, unsigned int n)
 {
-unsigned int a;
-fot (a=0; a<n; a++)
+char *p = s;
+while (n > 0)
 {
-s[a]=b;
+*p = b;
+p++;
+n--;
 }
-return(s);
+return (s);
 }
