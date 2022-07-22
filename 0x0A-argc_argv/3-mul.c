@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
 * main - Program that prints the number of arguments passed into it
@@ -9,20 +8,17 @@
 * Return: 0
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-int i, j;
-if (argc == 1 || argc == 2)
+int a, b, c;
+if (argc != 3)
 {
 printf("Error\n");
 return (1);
 }
-else
-{
-j = 1;
-for (i = 1; i < 3; i++)
-j *= atoi(argv[i]);
-printf("%d\n", j);
-}
+a = atoi(*(argv + 1));
+b = atoi(*(argv + 2));
+c = a * b;
+printf("%d\n", c);
 return (0);
 }
