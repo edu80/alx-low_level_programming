@@ -1,38 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* main -  print name
-*@argc: int.
-*@argv: char.
-* Return: Always 0.
+* main - Program that prints the number of arguments passed into it
+* @argc: - Int of arguments passed into program including command
+* @argv: - Array of pointers to the strings of arguments passed
+* Return: 0
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-int i;
-int j;
-int k;
-int mult = 0;
+int a, b, c;
 if (argc != 3)
 {
 printf("Error\n");
-return (0);
+return (1);
 }
-else if (argc == 3)
-{
-for (i = 0 ; i < argc ; i++)
-{
-if (i == 1)
-{
-j = atoi(argv[i]);
-}
-else if (i == 2)
-{
-k = atoi(argv[i]);
-}
-}
-mult = j * k;
-printf("%d\n", mult);
-}
+a = atoi(*(argv + 1));
+b = atoi(*(argv + 2));
+c = a * b;
+printf("%d\n", c);
 return (0);
 }

@@ -1,34 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
 /**
-* main -  print name
-*@argc: int.
-*@argv: char.
-*Return: Always 0.
+* main - Program that adds positive numbers
+* @argc: - Int of arguments passed into program including command
+* @argv: - Array of pointers to the strings of arguments passed
+* Return: 0
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-int i;
-int j;
-int sum = 0;
-if (argc < 2)
-{
-printf("0\n");
-return (0);
-}
+char *s;
+int i, sum = 0;
+unsigned int j, l;
 for (i = 1; i < argc; i++)
 {
-for (j = 0; argv[i][j] != '\0'; j++)
+l = strlen(*(argv + i));
+s = *(argv + i);
+for (j = 0; j < l; ++j)
 {
-if(argv[i][j] < '0' || argv[i][j] > '9')
+if (isdigit(*(s + j)) == 0)
 {
 printf("Error\n");
 return (1);
 }
 }
-sum = sum + atoi(argv[i]);
+sum += atoi(*(argv + i));
 }
 printf("%d\n", sum);
 return (0);
