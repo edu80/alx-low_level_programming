@@ -2,34 +2,27 @@
 #include <stdlib.h>
 
 /**
-* main - prints opcode of own main function
-* @argc: argument count
-* @argv: arg value
-* Return: int
+* main - print the name of this function
+* @argc: has the length of the arguments
+* @argv: has the arguments
+* Return: 0 to indicate a good working of the program
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-int x, i;
-unsigned char *p;
+int i;
 if (argc != 2)
 {
 printf("Error\n");
 exit(1);
 }
-x = atoi(argv[1]);
-if (x < 0)
+if (atoi(argv[1]) < 0)
 {
 printf("Error\n");
 exit(2);
 }
-p = (unsigned char *)main;
-i = 0;
-if (x > 0)
-{
-while (i < (x - 1))
-printf("%02hhx ", p[i++]);
-printf("%hhx\n", p[i]);
-}
+for (i = 0; i < atoi(argv[1]) - 1; i++)
+printf("%02hhx ", ((char *) main)[i]);
+printf("%02hhx\n", ((char *) main)[i]);
 return (0);
 }
