@@ -2,21 +2,23 @@
 
 /**
 * get_nodeint_at_index - returns the nth node of a listint_t linked list.
-* @head: pointer to the list.
-* @index: nth node.
-* Return: nth node, if the node doesn't exist, returns NULL.
+* @head: the head of the list
+* @index: the index of the node
+* Return: the nth node of a listint_t linked list.
 */
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-listint_t *node = head;
-unsigned int cont = 0;
-while (node && cont != index)
-{
-cont++;
-node = node->next;
-}
-if (node && cont == index)
-return (node);
+unsigned int idx = 0;
+listint_t *ptr = head;
+if (!head)
 return (NULL);
+while (idx < index && ptr)
+{
+ptr = ptr->next;
+idx++;
+}
+if (idx < index)
+return (NULL);
+return (ptr);
 }
