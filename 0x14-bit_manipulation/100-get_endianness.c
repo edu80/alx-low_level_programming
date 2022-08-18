@@ -8,15 +8,7 @@
 
 int get_endianness(void)
 {
-int n;
-n = get_endianness();
-if (n != 0)
-{
-printf("Little Endian\n");
-}
-else
-{
-printf("Big Endian\n");
-}
-return (0);
+unsigned int x = 1;
+char *c = (char *) &x;
+return ((int)*c);
 }
