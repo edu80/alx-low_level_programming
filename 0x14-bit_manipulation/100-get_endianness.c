@@ -1,13 +1,22 @@
-#include <stdio.h>
-#include "main.h"
+#include <stdio.h>                                                             
+#include "main.h"  
 
 /**
 * get_endianness - return the endianness of the machine
 * Return: 0 for big endian, 1 for little endian
 */
 
-int get_endianness(void)
+int main(void)
 {
-int n = 1;
-return (*((char *) &n) + '0');
+int n;
+n = get_endianness();
+if (n != 0)
+{
+printf("Little Endian\n");
+}
+else
+{
+printf("Big Endian\n");
+}
+return (0);
 }
