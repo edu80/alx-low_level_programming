@@ -6,7 +6,7 @@
 * Return: 0 for big endian, 1 for little endian
 */
 
-int main(void)
+int get_endianness(void)
 {
 int n;
 n = get_endianness();
