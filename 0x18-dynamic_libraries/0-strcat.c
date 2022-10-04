@@ -18,4 +18,3 @@ char *_strcat(char *dest, char *src)
 	dest[x + y] = '\0';
 	return (dest);
 }
-Footer
